@@ -1,0 +1,139 @@
+*{
+    
+
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin:0;
+    padding:10px;
+    
+}
+html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction: column;
+}
+
+.navbar-brand{
+   margin-left: 10px;
+}
+.nav-link{
+    color: #ccc;
+}
+
+
+
+.container-fluid {
+    background: #007bff;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    align-items: center;
+    width:100vw;
+}
+h2{
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif 
+}
+
+#bookingForm {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#bookingForm label {
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#bookingForm input, 
+#bookingForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+#bookingForm input:focus, 
+#bookingForm textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+#bookingForm textarea {
+    height: 80px;
+    resize: none;
+}
+
+.bookServiceButton {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.bookServiceButton:hover {
+    background: #0056b3;
+}
+
+@media (max-width: 680px) {
+    h1{
+        font-size: 23px;
+    }
+}
+
+/* Center form and improve layout */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background:#007bff ;
+    color: white;
+    width:100%;
+    
+    margin-top: auto;
+    bottom:0;
+}
+
+.container-fluid {
+    background: #007bff;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    align-items: center;
+}
+ul{
+    list-style-type:none;
+}
+
+.logo{
+    height:120px;
+    width:120px;
+
+}
+.footer-logo{
+    height:110px;
+    width:120px;
+}
+
+.footer-p a{
+    color: #fff;
+}

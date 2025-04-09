@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+  <meta charset="UTF-8">      
+  <link rel="stylesheet" href="style.css">
+  <title>Quickit Company</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        
+</head>
+
+<body>
+  <header>
+  
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand" href="index.html"><img src="images/logo.jpg" alt="LOGO" class="logo"></a>
+      
+     
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../public/index.html" style="color:white">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact us</a></li>
+          </li>
+          
+          
+        </ul>
+          
+
+          <form class="d-flex" id="service-search-form" role="search">
+            <input class="form-control me-2" type="search" placeholder="What are you looking for?" aria-label="Search" id="service-search-input">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+            <!--Login/Signup Buttons-->
+             <div id="auth-buttons">
+              <a href="login.html" class="btn btn-primary">Login</a>
+              <a href="signup.html" class="btn btn-primary">Signup</a>
+            </div>
+          
+            <!--Logout Button (Initially Hidden)-->
+            <button id="logoutBtn" class="btn btn-danger" style="display:none;">Logout</button>
+
+        
+            
+      
+          
+
+            
+      </div>
+    </div>
+  </nav>
+  <br>
+  </header>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchForm = document.getElementById("service-search-form");
+  
+      searchForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const input = document.getElementById("service-search-input").value.toLowerCase().trim();
+  
+        // Map keywords to page filenames
+        const serviceMap = {
+          "plumber": "plumbing.html",
+          "plumbing": "plumbing.html",
+          "leak":"plumbing.html",
+          "tap ":"plumbing.html",
+          "pipe":"plumbing.html",
+          "electrician": "electrician.html",
+          "wire ":"electrician.html",
+          "switch ":"electrician.html",
+          "light ":"electrician.html",
+          "solar": "solar-panel-cleaning.html",
+          "solar panels": "solar-panel-cleaning.html",
+          "electric appliances": "electric appliances.html",
+          "geyser":"electric appliances.html",
+          "A.C.":"electric appliances.html",
+          "fridge":"electric appliances.html",
+          "washing machine tv T.V.":"electric appliances.html",
+          "pest": "pest-control.html",
+          "pest control": "pest-control.html",
+          "construction": "construction-repair.html",
+          "building construction":"new-service.html",
+          "furniture sofa bed wardrobe cupboard table": "furniture.html",
+          "water": "water-purifier.html",
+          "water purifier": "water-purifier.html"
+        };
+  
+        let found = false;
+  
+        for (let key in serviceMap) {
+          if (key.includes(input)||input.includes(key)) {
+            window.location.href = serviceMap[key];
+            found = true;
+            break;
+          }
+        }
+  
+        if (!found) {
+          alert("Sorry, we couldn't find that service.");
+        }
+      });
+    });
+  </script>
+
+
+
+  <div class="advertisement">
+    <img src="images/new construction.jpg" alt="new-service" class="ad-image">
+    <div class="ad-content">
+        <h2>Introducing Our New Service: New Architectural Construction</h2>
+        <p>Experience top-notch construction with professional experts. Book now and get exciting offers!</p>
+        <a href="new-service.html" class="ad-button">Learn More</a>
+    </div>
+  </div>
+ 
+  <br>
+  <h2>Our Services</h2>
+
+    <div class="service-grid">
+        <div class="service">
+            <a href="solar-panel-cleaning.html">
+                <img src="images/solar panels.jpg" alt="Solar Panel Cleaning">
+                <h4>Solar Panel Cleaning</h4>
+            </a>
+        </div>
+
+        <div class="service">
+            <a href="pest-control.html">
+                <img src="images/pest control.jpg" alt="Pest Control">
+                <h4>Pest Control</h4>
+            </a>
+        </div>
+
+        <div class="service">
+            <a href="plumbing.html">
+                <img src="images/plumbing.jpg" alt="Plumbing">
+                <h4>Plumbing</h4>
+            </a>
+        </div>
+
+        <div class="service">
+            <a href="electrician.html">
+                <img src="images/electrician.jpg" alt="Electrical Repairs">
+                <h4>Electrical</h4>
+            </a>
+        </div>
+
+        <div class="service">
+            <a href="electric appliances.html">
+                <img src="images/fridge repair.jpg" alt="Home electric appliances">
+                <h4>Home electric appliances</h4>
+            </a>
+        </div>
+
+        <div class="service">
+            <a href="water-purifier.html">
+                <img src="images/water purifier.jpg" alt="water purifier">
+                <h4>Water Purifier</h4>
+            </a>
+        </div>
+
+        <div class="service">
+          <a href="construction-repair.html">
+              <img src="images/Construction.jpg" alt="Construction">
+              <h4>Construction repair</h4>
+          </a>
+        </div>
+
+
+        <div class="service">
+          <a href="furniture.html">
+              <img src="images/Furniture.jpg" alt=furniture">
+              <h4>Furniture</h4>
+          </a>
+        </div>
+
+    </div>
+  
+  <br>
+  <br>
+  <!--<h3 class="subcat header">Electric Appliances Repair and Maintenance</h3>
+
+  <div class="appliance-grid">
+    <div class="service">
+        <img src="images/A.C. repair.jpg" alt="AC Repair">
+        <h4>AC</h4>
+    </div>
+
+    <div class="appliance-item">
+        <img src="images/washing machine.jpg" alt="Washing Machine">
+        <h4>Washing Machine</h4>
+    </div>
+
+    <div class="appliance-item">
+        <img src="images/T.V..jpg" alt="Television">
+        <h4>Television</h4>
+    </div>
+
+    <div class="appliance-item">
+        <img src="images/gas geaser.jpg" alt="Geyser">
+        <h4>Geyser</h4>
+    </div>
+
+    <div class="appliance-item">
+      <img src="images/micorwave repair.jpg" alt="Micorwave">
+      <h4>Microwave</h4>
+    </div>
+
+    <div class="appliance-item">
+      <img src="images/fridge repair.jpg" alt="fridge">
+      <h4>Fridge</h4>
+    </div>
+  </div>-->
+
+
+  <section class="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="review-grid">
+        <div class="review">
+            <p>⭐⭐⭐⭐⭐ "Great service! Very professional and on time!"</p>
+            <h4>- JD</h4>
+        </div>
+        <div class="review">
+            <p>⭐⭐⭐⭐ "Fixed my plumbing issue quickly. Highly recommended!"</p>
+            <h4>- Sanika javli</h4>
+        </div>
+        <div class="review">
+            <p>⭐⭐⭐⭐⭐ "Best home repair service! Will book again."</p>
+            <h4>- Rakesh Mane</h4>
+        </div>
+    </div>
+  </section>
+  
+  <a href="https://wa.me/917875437255" target="_blank" class="whatsapp-float">
+    <img src="images/whatsapp-svgrepo-com.svg" alt="WhatsApp">
+  </a>
+    <div class="gap"></div>
+      <footer>
+    <div class="footer-container">
+      <div class="footer-LOGO">
+        <img class="footer-logo" src="images/logo.jpg" alt="logo">
+      </div>
+        <p>&copy; 2025 Quickit Company. All rights reserved.</p>
+        <p>
+            <a href="index.html">Home</a> | 
+            <a href="about.html">About us</a> | 
+            <a href="contact.html">Contact Us</a> | 
+            <a href="FAQs.html">FAQs</a> |
+            <a href="">Terms and Conditions</a> |
+        </p>
+      </footer>
+    </div>
+    
+   
+  
+  
+  </div>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe "
+  crossorigin="anonymous"></script>
+  
+<script src="js/script.js"></script>
+<script src="js/login.js"></script>
+<script src="js/signup.js"></script>
+
+ 
+</body>
+
+
+    
+</html>
