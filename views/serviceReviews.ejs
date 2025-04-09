@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews for <%= service %></title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Link your main CSS file -->
+</head>
+<body>
+    <h2>Reviews for <%= service %></h2>
+    
+    <% if (reviews.length) { %>
+        <% reviews.forEach(review => { %>
+            <div class="review">
+                <strong><%= review.name %></strong>
+                <p><%= review.review %></p>
+                <p>Rating:
+                    <% for (let i = 0; i < review.rating; i++) { %>
+                        ⭐
+                    <% } %>
+                </p>
+                <% if (review.image) { %>
+                    <img src="/uploads/<%= review.image %>" alt="Review image" style="width:150px">
+                <% } %>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <p>No reviews yet for this service.</p>
+    <% } %>
+</body>
+</html>

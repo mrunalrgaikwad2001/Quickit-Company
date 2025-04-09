@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Link your main CSS file -->
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="confirmation-box success">
+            <h1>Booking Confirmed!</h1>
+            <p>Thank you, <strong><%= bookingDetails.name %></strong>!</p>
+            <p>Your booking for <strong><%= bookingDetails.date %></strong> at <strong><%= bookingDetails.time %></strong> has been confirmed.</p>
+            <p>We will get back to you soon!</p>
+            <a href="./" class="btn-home">Return to Home</a>
+        </div>
+    </div>
+
+    <h2>Leave a review for <%=bookingDetails.service%></h2>
+    <form action="/reviews/submit" method="POST",enctype="multipart/form-data">
+      <input type="hidden" name="service" value="<%=bookingDetails.service%>">
+      <label for="name">Your name:</label>
+      <input type="text" id="name" name="name"  required>
+
+      <label for="review">Review:</label>
+      <textarea id="review" name="review" required></textarea>
+
+    <!--Start rating input-->
+      <label for="rating">Rating(1-5):</label>
+      <select id="rating" name="rating" required></select>
+        <option value="1">⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+  </select>
+
+  <label for="image">Upload Image (optional):</label>
+  <input type="file" id="image" name="image" accept="image/*">
+
+  <button type="submit">Submit</button>
+</form>
+    </form>
+</body>
+</html>

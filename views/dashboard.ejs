@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>My Bookings</h2>
+
+    <% if (bookings.length) { %>
+        <% bookings.forEach(booking => { %>
+            <div class="booking">
+                <h3>Service: <%= booking.service %></h3>
+                <p>Date: <%= booking.date %></p>
+                <p>Status: <%= booking.status %></p>
+
+                <% if (booking.status === "completed" && !booking.reviewed) { %>
+                    <form action="/reviews/submit" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="booking_id" value="<%= booking.id %>">
+                        <input type="hidden" name="service" value="<%= booking.service %>">
+                        <label>Review:</label>
+                        <textarea name="review" required></textarea>
+                        <label>Rating:</label>
+                        <select name="rating" required>
+                            <option value="1">⭐</option>
+                            <option value="2">⭐⭐</option>
+                            <option value="3">⭐⭐⭐</option>
+                            <option value="4">⭐⭐⭐⭐</option>
+                            <option value="5">⭐⭐⭐⭐⭐</option>
+                        </select>
+                        <label>Upload Image:</label>
+                        <input type="file" name="image">
+                        <button type="submit">Submit Review</button>
+                    </form>
+                <% } else if (booking.status === "completed") { %>
+                    <p>✅ Reviewed</p>
+                <% } %>
+            </div>
+        <% }); %>
+    <% } else { %>
+        <p>No bookings found.</p>
+    <% } %>
+    <script>
+        function submitReview(service){
+            window.location.href="/review/"+service;
+
+        }
+    </script>
+</body>
+</html>
