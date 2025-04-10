@@ -1,7 +1,7 @@
 import pg from "pg";
 import dotenv from "dotenv";
+import {client} from "pg";
 dotenv.config();
-const {Client}=pkg;
 const database = new pg.Client({
 
     connectionString:process.env.DATABASE_URL,ssl:{
