@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,"frontend/public")));
 app.use(express.json());
 app.use(cors({
-    origin:"*",
+    origin:"https://quickitcompany.com",
     crediantials:true}));
 
 app.use("/contact",contactRoutes);
@@ -65,6 +65,6 @@ app.set("view engine","ejs");
 
 //start server
 app.listen(PORT,()=>{
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on quickitcompany.com`);
 
 });
