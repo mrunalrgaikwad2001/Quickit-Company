@@ -4,14 +4,14 @@ import passport from "passport";
 import flash from "connect-flash";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import bookingRoutes from "./backend/routes/bookingRoutes.js";
+import bookingRoutes from "./routes/bookingRoutes.js";
 import path from "path";
 import{fileURLToPath} from "url";
 
-import contactRoutes from "./backend/routes/contactRoutes.js";
-import authRoutes from "./backend/routes/authRoutes.js"
+import contactRoutes from "./routes/contactRoutes.js";
+import authRoutes from "./routes/authRoutes.js"
 import cors from "cors";
-import searchServiceRoutes from "./backend/routes/searchServiceRoutes.js"
+import searchServiceRoutes from "./routes/searchServiceRoutes.js"
 dotenv.config();
 
 const app=express();
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,"frontend/public")));
 app.use(express.json());
 app.use(cors({
-    origin:"https://quickitcompany.com",
+    origin:"https://www.quickitcompany.com",
     crediantials:true}));
 
 app.use("/contact",contactRoutes);
