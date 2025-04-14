@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname,"frontend/public")));
 app.use(express.json());
 app.use(cors({
     origin:["https://www.quickitcompany.com","https://quickitcompany.com"]
-    crediantials:true}));
+    credentials:true}));
 
 app.use("/contact",contactRoutes);
 app.use("/api/auth",authRoutes);
